@@ -1,0 +1,10 @@
+flask
+flask-cors
+requests
+opencv-python
+mediapipe
+gtts
+pydub
+speechrecognition
+pyaudio
+numpy
