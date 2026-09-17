@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voice & Gesture Smart Lighting System</title>
+
+    /* ================= GENERAL ================= */
+
+<style> 
+* {
+    margin: 0px;
+    padding: 0px;
+   box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #050811;
+    color: white;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    height: 70px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #060b16;
+
+    border-bottom: 1px solid #162c50;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.logo {
+    color: #45a7ff;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #aab8cc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #4daaff;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 720px;
+
+    padding: 90px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            #10386f,
+            #081327 30%,
+            #050811 65%
+        );
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.small-title {
+    color: #43a7ff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 65px;
+
+    line-height: 1.05;
+
+    margin: 20px 0;
+}
+
+h1 span {
+    color: #48a8ff;
+}
+
+.description {
+    color: #aebbd0;
+
+    font-size: 18px;
+
+    max-width: 620px;
+}
+
+.buttons {
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+.btn {
+    padding: 13px 24px;
+
+    background-color: #1475d1;
+
+    border-radius: 7px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #258de8;
+}
+
+.btn.outline {
+    background-color: transparent;
+
+    border: 1px solid #315b8e;
+}
+
+.quick-info {
+    display: flex;
+
+    gap: 35px;
+
+    margin-top: 40px;
+}
+
+.quick-info div {
+    border-left: 2px solid #1977d1;
+
+    padding-left: 13px;
+}
+
+.quick-info b {
+    display: block;
+
+    font-size: 21px;
+}
+
+.quick-info small {
+    color: #7f91aa;
+}
+
+
+/* ================= HERO VISUAL ================= */
+
+.hero-box {
+    width: 420px;
+    height: 420px;
+
+    border-radius: 30px;
+
+    border: 1px solid #1a477b;
+
+    background: linear-gradient(
+        145deg,
+        #07152b,
+        #0b2345
+    );
+
+    position: relative;
+
+    box-shadow: 0 0 80px #052c61;
+}
+
+.circle {
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    background-color: #1475d1;
+
+    opacity: 0.25;
+
+    filter: blur(60px);
+
+    position: absolute;
+
+    top: 100px;
+    left: 100px;
+}
+
+.icon,
+.chip,
+.bulb {
+    position: absolute;
+
+    background-color: #071a35;
+
+    border: 1px solid #2b69ad;
+
+    border-radius: 15px;
+
+    padding: 17px;
+
+    box-shadow: 0 10px 30px #02050a;
+}
+
+.voice {
+    top: 65px;
+    right: 50px;
+
+    font-size: 38px;
+}
+
+.hand {
+    top: 65px;
+    left: 45px;
+
+    font-size: 40px;
+}
+
+.chip {
+    top: 175px;
+    left: 150px;
+
+    font-size: 27px;
+
+    font-weight: bold;
+}
+
+.bulb {
+    bottom: 60px;
+    right: 50px;
+
+    font-size: 45px;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section {
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 90px 7%;
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 35px;
+}
+
+.section-heading span {
+    color: #3fa6ff;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+}
+
+.section-description {
+    color: #9aaac0;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= CARDS ================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.card {
+    background-color: #090f1b;
+
+    border: 1px solid #192f52;
+
+    border-radius: 15px;
+
+    padding: 30px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+
+    font-size: 22px;
+}
+
+.card p {
+    color: #aebbd0;
+
+    margin-bottom: 12px;
+}
+
+.blue-card {
+    background: linear-gradient(
+        135deg,
+        #091529,
+        #0b2343
+    );
+}
+
+.flow {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin: 20px 0;
+}
+
+.flow span {
+    padding: 8px 11px;
+
+    border-radius: 7px;
+
+    background-color: #0c2b50;
+
+    border: 1px solid #1e5c99;
+
+    font-size: 13px;
+}
+
+.flow {
+    color: #4da8ff;
+}
+
+
+/* ================= HARDWARE ================= */
+
+.hardware-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.hardware-card {
+    background-color: #090f1b;
+
+    border: 1px solid #172c4c;
+
+    border-radius: 13px;
+
+    padding: 25px;
+
+    transition: 0.3s;
+}
+
+.hardware-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #237dcc;
+}
+
+.hardware-icon {
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: #07172c;
+
+    border-radius: 10px;
+
+    color: #43a5ff;
+
+    font-size: 38px;
+
+    margin-bottom: 18px;
+}
+
+.hardware-card h3 {
+    margin-bottom: 7px;
+}
+
+.hardware-card p {
+    color: #94a4bb;
+}
+
+.large-card {
+    grid-column: span 3;
+}
+
+.lights {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+    letter-spacing: 25px;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: #22dd55;
+}
+
+.blue {
+    color: #248cff;
+}
+
+.yellow {
+    color: #ffd426;
+}
+
+
+/* ================= SOFTWARE ================= */
+
+.software-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.software-card {
+    padding: 25px;
+
+    background-color: #090f1b;
+
+    border: 1px solid #172c4c;
+
+    border-radius: 14px;
+}
+
+.tech {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: #0a2a51;
+
+    border-radius: 10px;
+
+    color: #48a8ff;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.software-card p {
+    color: #9eacc1;
+}
+
+.api {
+    color: #49a8ff !important;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+}
+
+
+/* ================= WORKING ================= */
+
+.steps {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.step {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    background-color: #090f1b;
+
+    border: 1px solid #172c4c;
+
+    border-radius: 12px;
+}
+
+.number {
+    min-width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #0b315d;
+
+    color: #4ba8ff;
+
+    font-weight: bold;
+}
+
+.step h3 {
+    margin-bottom: 4px;
+}
+
+.step p {
+    color: #9eacc1;
+}
+
+
+/* ================= CIRCUIT ================= */
+
+.circuit-card {
+    background-color: #090f1b;
+
+    border: 1px solid #1a3458;
+
+    border-radius: 15px;
+
+    padding: 20px;
+}
+
+.circuit-card img {
+    width: 100%;
+
+    max-height: 700px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    display: block;
+
+    background-color: #02050a;
+}
+
+.circuit-text {
+    padding: 22px 5px 5px;
+}
+
+.circuit-text p {
+    color: #a6b4c8;
+}
+
+
+/* ================= WARNING ================= */
+
+.warning {
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-left: 4px solid #e5a623;
+
+    background-color: #11100b;
+
+    color: #bfc8d6;
+}
+
+
+/* ================= LIST ================= */
+
+ul {
+    padding-left: 20px;
+
+    color: #aebbd0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+
+/* ================= TEAM ================= */
+
+.team {
+    display: grid;
+
+    grid-template-columns: 1fr 2fr;
+
+    background:
+        linear-gradient(
+            135deg,
+            #091a33,
+            #07101e
+        );
+
+    border: 1px solid #1b3b65;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+.school {
+    padding: 50px;
+
+    text-align: center;
+
+    border-right: 1px solid #1c3c64;
+}
+
+.school-logo {
+    font-size: 50px;
+
+    color: #49a8ff;
+
+    font-weight: 900;
+}
+
+.school h2 {
+    margin-top: 10px;
+}
+
+.school p {
+    color: #899db8;
+}
+
+.team-info {
+    padding: 40px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.team-info div {
+    border-bottom: 1px solid #1b3455;
+
+    padding-bottom: 12px;
+}
+
+.team-info span {
+    display: block;
+
+    color: #7187a6;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.team-info strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: white;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 40px 8%;
+
+    background-color: #03050a;
+
+    border-top: 1px solid #142746;
+
+    color: #8193ad;
+}
+
+footer h3 {
+    color: white;
+
+    margin-bottom: 5px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 70px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .hero-box {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .buttons,
+    .quick-info {
+        justify-content: center;
+    }
+
+    .cards,
+    .software-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hardware-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .large-card {
+        grid-column: span 2;
+    }
+
+    .team {
+        grid-template-columns: 1fr;
+    }
+
+    .school {
+        border-right: none;
+
+        border-bottom: 1px solid #1c3c64;
+    }
+
+}
+
+
+@media screen and (max-width: 550px) {
+
+    .section {
+        padding: 60px 6%;
+    }
+
+    .hardware-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .large-card {
+        grid-column: span 1;
+    }
+
+    .team-info {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .hero-box {
+        height: 330px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+    <div class="logo">SMART LIGHTING</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#hardware">Hardware</a>
+        <a href="#software">Software</a>
+        <a href="#working">Working</a>
+        <a href="#circuit">Circuit</a>
+        <a href="#team">Team</a>
+    </nav>
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-text">
+
+        <p class="small-title">
+            COMPUTER SCIENCE PROJECT
+        </p>
+
+        <h1>
+            Voice & Gesture
+            <br>
+            <span>Smart Lighting System</span>
+        </h1>
+
+        <p class="description">
+            A smart lighting system that allows users to control
+            four lights using voice commands and hand gestures.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#about" class="btn">
+                Explore Project
+            </a>
+
+            <a href="#hardware" class="btn outline">
+                View Hardware
+            </a>
+
+        </div>
+
+        <div class="quick-info">
+
+            <div>
+                <b>ESP32</b>
+                <small>Controller</small>
+            </div>
+
+            <div>
+                <b>4</b>
+                <small>Lights</small>
+            </div>
+
+            <div>
+                <b>2</b>
+                <small>Control Modes</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-box">
+
+        <div class="circle"></div>
+
+        <div class="icon voice">🎙</div>
+
+        <div class="icon hand">✋</div>
+
+        <div class="chip">
+            ESP32
+        </div>
+
+        <div class="bulb">
+            💡
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section">
+
+    <div class="section-heading">
+        <span>01</span>
+        <h2>Project Overview</h2>
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>What is this project?</h3>
+
+            <p>
+                The Voice & Gesture Smart Lighting System is a
+                computer science project designed to make lighting
+                control easier and smarter.
+            </p>
+
+            <p>
+                The system allows a user to control lights using
+                voice commands or hand gestures.
+            </p>
+
+        </div>
+
+
+        <div class="card blue-card">
+
+            <h3>Project Concept</h3>
+
+            <div class="flow">
+
+                <span>Voice</span>
+                →
+                <span>AI</span>
+                →
+                <span>ESP32</span>
+                →
+                <span>Relay</span>
+                →
+                <span>Lights</span>
+
+            </div>
+
+
+            <div class="flow">
+
+                <span>Gesture</span>
+                →
+                <span>Computer Vision</span>
+                →
+                <span>ESP32</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HARDWARE ================= -->
+
+<section id="hardware" class="section">
+
+    <div class="section-heading">
+        <span>02</span>
+        <h2>Hardware Components</h2>
+    </div>
+
+    <p class="section-description">
+        The following hardware components are used in our
+        smart lighting system.
+    </p>
+
+
+    <div class="hardware-grid">
+
+
+        <div class="hardware-card">
+
+            <div class="hardware-icon">
+                ⚙️
+            </div>
+
+            <h3>ESP32</h3>
+
+            <p>
+                Main microcontroller used to control the system.
+            </p>
+
+        </div>
+
+
+
+        <div class="hardware-card">
+
+            <div class="hardware-icon">
+                🔌
+            </div>
+
+            <h3>4V Relay Module</h3>
+
+            <p>
+                Used to switch the lighting outputs.
+            </p>
+
+        </div>
+
+
+
+        <div class="hardware-card">
+
+            <div class="hardware-icon">
+                🎙️
+            </div>
+
+            <h3>Microphone</h3>
+
+            <p>
+                Captures voice commands from the user.
+            </p>
+
+        </div>
+
+
+
+        <div class="hardware-card">
+
+            <div class="hardware-icon">
+                ▣
+            </div>
+
+            <h3>OLED Display</h3>
+
+            <p>
+                Displays system information and status.
+            </p>
+
+        </div>
+
+
+
+        <div class="hardware-card">
+
+            <div class="hardware-icon">
+                ▦
+            </div>
+
+            <h3>Breadboard</h3>
+
+            <p>
+                Used for low-voltage circuit connections.
+            </p>
+
+        </div>
+
+
+
+        <div class="hardware-card">
+
+            <div class="hardware-icon">
+                ~
+            </div>
+
+            <h3>Jumper Wires</h3>
+
+            <p>
+                Used to connect the electronic components.
+            </p>
+
+        </div>
+
+
+
+        <div class="hardware-card">
+
+            <div class="hardware-icon">
+                USB
+            </div>
+
+            <h3>USB Cable</h3>
+
+            <p>
+                Used for programming and powering the ESP32.
+            </p>
+
+        </div>
+
+
+
+        <div class="hardware-card">
+
+            <div class="hardware-icon">
+                ⚡
+            </div>
+
+            <h3>5V Power Supply</h3>
+
+            <p>
+                Provides low-voltage power to the system.
+            </p>
+
+        </div>
+
+
+
+        <div class="hardware-card large-card">
+
+            <div class="lights">
+
+                <span class="red">●</span>
+                <span class="green">●</span>
+                <span class="blue">●</span>
+                <span class="yellow">●</span>
+
+            </div>
+
+            <h3>4 × 220V AC Bulbs</h3>
+
+            <p>
+                Four lighting outputs for different rooms.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SOFTWARE ================= -->
+
+<section id="software" class="section">
+
+    <div class="section-heading">
+        <span>03</span>
+        <h2>Software Technologies</h2>
+    </div>
+
+
+    <div class="software-grid">
+
+
+        <div class="software-card">
+
+            <div class="tech">
+                AI
+            </div>
+
+            <h3>Gemini API</h3>
+
+            <p>
+                Used as the AI and voice model reference
+                for processing intelligent voice interaction.
+            </p>
+
+            <p class="api">
+                Gemini API Key
+            </p>
+
+        </div>
+
+
+
+        <div class="software-card">
+
+            <div class="tech">
+                CV
+            </div>
+
+            <h3>MediaPipe</h3>
+
+            <p>
+                Python computer vision library used for
+                gesture recognition.
+            </p>
+
+        </div>
+
+
+
+        <div class="software-card">
+
+            <div class="tech">
+                CV
+            </div>
+
+            <h3>OpenCV</h3>
+
+            <p>
+                Used for image and camera processing
+                in computer vision.
+            </p>
+
+        </div>
+
+
+
+        <div class="software-card">
+
+            <div class="tech">
+                J
+            </div>
+
+            <h3>Java</h3>
+
+            <p>
+                Used for the backend server of this
+                simple web interface.
+            </p>
+
+        </div>
+
+
+
+        <div class="software-card">
+
+            <div class="tech">
+                H
+            </div>
+
+            <h3>HTML</h3>
+
+            <p>
+                Used to create the structure of the
+                website.
+            </p>
+
+        </div>
+
+
+
+        <div class="software-card">
+
+            <div class="tech">
+                C
+            </div>
+
+            <h3>CSS</h3>
+
+            <p>
+                Used to design the black and dark-blue
+                interface.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= WORKING ================= -->
+
+<section id="working" class="section">
+
+    <div class="section-heading">
+        <span>04</span>
+        <h2>How The System Works</h2>
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="number">
+                01
+            </div>
+
+            <div>
+                <h3>User Input</h3>
+
+                <p>
+                    The user gives a voice command or
+                    performs a supported hand gesture.
+                </p>
+            </div>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="number">
+                02
+            </div>
+
+            <div>
+                <h3>Recognition</h3>
+
+                <p>
+                    Voice processing or computer vision
+                    interprets the input.
+                </p>
+            </div>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="number">
+                03
+            </div>
+
+            <div>
+                <h3>ESP32 Control</h3>
+
+                <p>
+                    The command is converted into a control
+                    instruction for the ESP32.
+                </p>
+            </div>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="number">
+                04
+            </div>
+
+            <div>
+                <h3>Relay Switching</h3>
+
+                <p>
+                    The ESP32 controls the appropriate
+                    relay channel.
+                </p>
+            </div>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="number">
+                05
+            </div>
+
+            <div>
+                <h3>Light Output</h3>
+
+                <p>
+                    The selected bulb is switched according
+                    to the command.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CIRCUIT ================= -->
+
+<section id="circuit" class="section">
+
+    <div class="section-heading">
+        <span>05</span>
+        <h2>Circuit & Connections</h2>
+    </div>
+
+
+    <div class="circuit-card">
+
+        <img src="images/circuit.jpg"
+             alt="Voice and Gesture Smart Lighting Circuit">
+
+        <div class="circuit-text">
+
+            <h3>Project Circuit Architecture</h3>
+
+            <p>
+                This image shows the main architecture of the
+                Voice and Gesture Lighting System, including the
+                laptop, ESP32, relay module, power supply,
+                breadboard, wiring and four lighting outputs.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONNECTIONS ================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <span>06</span>
+        <h2>Connection Overview</h2>
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>Low Voltage Connections</h3>
+
+            <ul>
+
+                <li>ESP32 connected to the power rails.</li>
+
+                <li>Microphone connected to the ESP32.</li>
+
+                <li>OLED connected using I²C connections.</li>
+
+                <li>Relay module connected to ESP32.</li>
+
+                <li>Jumper wires used for connections.</li>
+
+                <li>Components share the required ground connection.</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>Lighting Connections</h3>
+
+            <ul>
+
+                <li>Four relay channels control four lights.</li>
+
+                <li>Living Room light.</li>
+
+                <li>Bedroom light.</li>
+
+                <li>Kitchen light.</li>
+
+                <li>Study Room light.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="warning">
+
+        <b>Safety Notice:</b>
+
+        The supplied wiring guide states that AC wiring should
+        not be placed on the breadboard. AC connections should
+        be properly insulated and enclosed in a suitable project
+        box. 220V wiring should only be handled under appropriate
+        qualified supervision.
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TEAM ================= -->
+
+<section id="team" class="section">
+
+    <div class="section-heading">
+        <span>07</span>
+        <h2>Our Team</h2>
+    </div>
+
+
+    <div class="team">
+
+
+        <div class="school">
+
+            <div class="school-logo">
+                SNFC
+            </div>
+
+            <h2>SNFC Masroor</h2>
+
+            <p>
+                Computer Science Project
+            </p>
+
+        </div>
+
+
+        <div class="team-info">
+
+            <div>
+
+                <span>Supervisor</span>
+
+                <strong>
+                    Mr. Riaz
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Team Members</span>
+
+                <strong>
+                    Samia
+                </strong>
+
+                <strong>
+                    Khadija
+                </strong>
+
+                <strong>
+                    Hoorain
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Class</span>
+
+                <strong>
+                    Matric
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Project</span>
+
+                <strong>
+                    Voice & Gesture Smart Lighting System
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        Voice & Gesture Smart Lighting System
+    </h3>
+
+    <p>
+        SNFC Masroor • Computer Science Project
+    </p>
+
+    <p>
+        Supervisor: Mr. Riaz
+    </p>
+
+</footer>
+</body>
+</html>
